@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Giá vàng SJC</title>
+</head>
+<body>
+  <pre id="result">Đang tải...</pre>
+
+  <script>
+    fetch('https://script.google.com/macros/s/AKfycbxZGXaila-yxGVMX9E7KTRpBEqGTU8y65nblgFJjmAeedM3ULSYbcCHPB-iBSpwEbN0/exec')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+      })
+      .catch(err => {
+        document.getElementById('result').textContent = 'Lỗi: ' + err.message;
+      });
+  </script>
+</body>
+</html>
